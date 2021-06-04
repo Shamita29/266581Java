@@ -1,9 +1,11 @@
- import java.util.*;
+  import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class Student{
-	private String  name;
-	private String address;
-	private String mobile;
+  private String  name;
+  private String address;
+  private String mobile;
 
 
    public void setName(String name)
@@ -22,38 +24,38 @@ class Student{
     
     public String getName()
     {
-    	return name;
+      return name;
     }
 
     public String getAddr()
     {
-    	return address;
+      return address;
     }
 
     public String getNum()
     {
-    	return mobile;
+      return mobile;
     }
 
     public void toPrint()
     { 
-    	System.out.println("\n***Employee Details: ***");
-    	System.out.println("Name: "+ getName());
-    	System.out.println("Address: "+ getAddr());
-    	System.out.println("Number: "+ getNum());
+      System.out.println("\n***Employee Details: ***");
+      System.out.println("Name: "+ getName());
+      System.out.println("Address: "+ getAddr());
+      System.out.println("Number: "+ getNum());
      }
 }
 
 class EmployeeMain{
-	public static void main(String args[])
-	{
+  public static void main(String args[])
+  {
    Student st = new Student();
 
    Scanner sc = new Scanner(System.in);
    System.out.println("Enter name: ");
      String name = sc.nextLine();
           if((name.length()) == 0){
-          	System.out.println("Invalid input");
+            System.out.println("Invalid input");
                 return;
          }
          else
@@ -64,12 +66,20 @@ class EmployeeMain{
 
    System.out.println("Enter number:");
    String num = sc.nextLine();
+    String regex = "\\d{10}";
+      Pattern pattern = Pattern.compile(regex);
+      //Creating a Matcher object
+      Matcher matcher = pattern.matcher(num);
+      //Verifying whether given phone number is valid
+      if(matcher.matches()){
+         st.setName(name);
+         st.setAddress(addr);
+         st.setNum(num);
 
-   st.setName(name);
-   st.setAddress(addr);
-   st.setNum(num);
 
-
-   st.toPrint();
+         st.toPrint();
+       }
+       else
+         System.out.println("Invalid number");
 }
 }
