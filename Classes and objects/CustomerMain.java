@@ -51,7 +51,7 @@ class CustomerMain{
    Student st = new Student();
 
    Scanner sc = new Scanner(System.in);
-   System.out.println("Enter details(name, place, number: ");
+   System.out.println("Enter details(name,place,details): ");
    String line = sc.nextLine();
    String[] words = line.split("\\s*,\\s*");
 
