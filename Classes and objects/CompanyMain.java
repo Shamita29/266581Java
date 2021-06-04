@@ -54,9 +54,9 @@ class CompanyMain{
    System.out.println("Enter the Company name: ");
    String comp = sc.nextLine(); 
    
-   System.out.println("Enter details: ");
+   System.out.println("Enter team members details: ");
    String line = sc.nextLine();
-   String[] words = line.split("[,]",0);
+   String[] words = line.split("\\s*,\\s*");
 
    System.out.println("Enter team lead");
    String  tl  = sc.nextLine();
