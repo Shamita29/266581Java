@@ -54,7 +54,7 @@ class EmployeeMain{
      String name = sc.nextLine();
           if((name.length()) == 0){
           	System.out.println("Invalid input");
-             break;
+                return;
          }
          else
 
