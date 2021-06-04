@@ -45,7 +45,7 @@ class Customer{
 }
 
 
-class CustomerMain{
+class CompanyMain{
     public static void main(String args[])
     {
    Customer cu = new Customer();
