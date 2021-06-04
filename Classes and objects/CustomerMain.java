@@ -37,7 +37,7 @@ class Customer{
 
     public void toPrint()
     { 
-    	System.out.println("\n***Employee Details: ***");
+    	System.out.println("\n*** Details: ***");
     	System.out.println("Name: "+ getName());
     	System.out.println("Address: "+ getAddr());
     	System.out.println("Number: "+ getNum());
@@ -51,9 +51,9 @@ class CustomerMain{
    Student st = new Student();
 
    Scanner sc = new Scanner(System.in);
-   System.out.println("Enter details: ");
+   System.out.println("Enter details(name, place, number: ");
    String line = sc.nextLine();
-   String[] words = line.split("[,]",0);
+   String[] words = line.split("\\s*,\\s*");
 
    st.setName(words[0]);
    st.setAddress(words[1]);
